@@ -1,0 +1,293 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Transistor_BJT:2N2219 Q1
+U 1 1 5E9047F0
+P 4850 2550
+F 0 "Q1" H 5040 2596 50  0000 L CNN
+F 1 "2N2219" H 5040 2505 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92L_Inline_Wide" H 5050 2475 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N2219-D.PDF" H 4850 2550 50  0001 L CNN
+	1    4850 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5E9056F6
+P 4950 2900
+F 0 "#PWR0101" H 4950 2650 50  0001 C CNN
+F 1 "GND" H 4955 2727 50  0000 C CNN
+F 2 "" H 4950 2900 50  0001 C CNN
+F 3 "" H 4950 2900 50  0001 C CNN
+	1    4950 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 2750 4950 2900
+$Comp
+L Device:R_Small R2
+U 1 1 5E9066A8
+P 4950 2050
+F 0 "R2" H 5009 2096 50  0000 L CNN
+F 1 "r200k" H 5009 2005 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 4950 2050 50  0001 C CNN
+F 3 "~" H 4950 2050 50  0001 C CNN
+	1    4950 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 2150 4950 2350
+Wire Wire Line
+	5600 2150 5600 1950
+Wire Wire Line
+	5600 1950 4950 1950
+Wire Wire Line
+	5300 2350 4950 2350
+Wire Wire Line
+	5600 2550 5600 2650
+$Comp
+L Connector:Conn_01x02_Male MOTOR_POWER_INPUT1
+U 1 1 5E909D27
+P 4300 1450
+F 0 "MOTOR_POWER_INPUT1" H 3850 1350 50  0000 C CNN
+F 1 "MOTOR_POWER_INPUT" H 3850 1450 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4300 1450 50  0001 C CNN
+F 3 "~" H 4300 1450 50  0001 C CNN
+	1    4300 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5E90B018
+P 4500 1550
+F 0 "#PWR0102" H 4500 1300 50  0001 C CNN
+F 1 "GND" H 4505 1377 50  0000 C CNN
+F 2 "" H 4500 1550 50  0001 C CNN
+F 3 "" H 4500 1550 50  0001 C CNN
+	1    4500 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 1450 5600 1450
+Wire Wire Line
+	5600 1450 5600 1950
+Connection ~ 5600 1950
+Connection ~ 4950 2350
+$Comp
+L Device:R_Small R1
+U 1 1 5E90F097
+P 4300 2550
+F 0 "R1" V 4104 2550 50  0000 C CNN
+F 1 "R1k" V 4195 2550 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 4300 2550 50  0001 C CNN
+F 3 "~" H 4300 2550 50  0001 C CNN
+	1    4300 2550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4200 2550 3900 2550
+$Comp
+L Connector:Conn_01x02_Male SIGNAL_SPEED_AND_DIRECTION1
+U 1 1 5E90FCD0
+P 3700 2550
+F 0 "SIGNAL_SPEED_AND_DIRECTION1" H 3500 2350 50  0000 C CNN
+F 1 "SIGNAL_SPEED_AND_DIRECTION" H 3500 2250 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3700 2550 50  0001 C CNN
+F 3 "~" H 3700 2550 50  0001 C CNN
+	1    3700 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 2550 4650 2550
+$Comp
+L Transistor_FET:IRF9540N Q2
+U 1 1 5E912D11
+P 5500 2350
+F 0 "Q2" H 5704 2396 50  0000 L CNN
+F 1 "IRF9540N" H 5704 2305 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5700 2275 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irf9540n.pdf" H 5500 2350 50  0001 L CNN
+	1    5500 2350
+	1    0    0    -1  
+$EndComp
+Text Label 5100 2350 0    50   ~ 0
+fet_g
+Text Label 4550 2550 0    50   ~ 0
+bjt_b
+Text Label 5550 1850 0    50   ~ 0
+motor_power_input
+Text Label 5700 2650 0    50   ~ 0
+fet_drain
+Text Label 3000 2600 0    50   ~ 0
+signal_speed_pwm
+Wire Wire Line
+	6950 2400 6950 2050
+Wire Wire Line
+	6950 2400 8700 2400
+Wire Wire Line
+	8700 2400 8700 2050
+Wire Wire Line
+	8500 2050 8500 2200
+Wire Wire Line
+	8500 2200 7950 2200
+Wire Wire Line
+	7150 2200 7150 2050
+$Comp
+L power:GND #PWR0103
+U 1 1 5E925CC0
+P 7950 2200
+F 0 "#PWR0103" H 7950 1950 50  0001 C CNN
+F 1 "GND" H 7955 2027 50  0000 C CNN
+F 2 "" H 7950 2200 50  0001 C CNN
+F 3 "" H 7950 2200 50  0001 C CNN
+	1    7950 2200
+	1    0    0    -1  
+$EndComp
+Connection ~ 7950 2200
+Wire Wire Line
+	7950 2200 7150 2200
+Text Label 7350 2200 0    50   ~ 0
+gndwire
+$Comp
+L Transistor_BJT:2N2219 Q3
+U 1 1 5E926843
+P 4850 3500
+F 0 "Q3" H 5040 3546 50  0000 L CNN
+F 1 "2N2219" H 5040 3455 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92L_Inline_Wide" H 5050 3425 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N2219-D.PDF" H 4850 3500 50  0001 L CNN
+	1    4850 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5E927C2F
+P 4500 3500
+F 0 "R3" V 4293 3500 50  0000 C CNN
+F 1 "R1k" V 4384 3500 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4430 3500 50  0001 C CNN
+F 3 "~" H 4500 3500 50  0001 C CNN
+	1    4500 3500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4350 3500 4150 3500
+Wire Wire Line
+	4150 3500 4150 2650
+Wire Wire Line
+	4150 2650 3900 2650
+$Comp
+L power:GND #PWR0104
+U 1 1 5E929018
+P 4950 3850
+F 0 "#PWR0104" H 4950 3600 50  0001 C CNN
+F 1 "GND" H 4955 3677 50  0000 C CNN
+F 2 "" H 4950 3850 50  0001 C CNN
+F 3 "" H 4950 3850 50  0001 C CNN
+	1    4950 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 3700 4950 3850
+Wire Wire Line
+	4950 3300 7450 3300
+Wire Wire Line
+	7450 3300 7450 2050
+Wire Wire Line
+	7450 3300 9000 3300
+Wire Wire Line
+	9000 3300 9000 2050
+Connection ~ 7450 3300
+$Comp
+L Connector:Conn_01x02_Male 5V_RELAY_POWER1
+U 1 1 5E92CC88
+P 4300 950
+F 0 "5V_RELAY_POWER1" H 3950 850 50  0000 C CNN
+F 1 "5V_RELAY_POWER" H 3950 950 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4300 950 50  0001 C CNN
+F 3 "~" H 4300 950 50  0001 C CNN
+	1    4300 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5E92E303
+P 4600 1050
+F 0 "#PWR0105" H 4600 800 50  0001 C CNN
+F 1 "GND" H 4605 877 50  0000 C CNN
+F 2 "" H 4600 1050 50  0001 C CNN
+F 3 "" H 4600 1050 50  0001 C CNN
+	1    4600 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 1050 4500 1050
+Wire Wire Line
+	4500 950  7450 950 
+Wire Wire Line
+	7450 950  7450 1450
+Wire Wire Line
+	7450 950  9000 950 
+Wire Wire Line
+	9000 950  9000 1450
+Connection ~ 7450 950 
+$Comp
+L Connector:Conn_01x02_Male MOTOR_POWER_OUTPUT1
+U 1 1 5E92FC61
+P 9850 1200
+F 0 "MOTOR_POWER_OUTPUT1" H 9822 1082 50  0000 R CNN
+F 1 "MOTOR_POWER_OUTPUT" H 9822 1173 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9850 1200 50  0001 C CNN
+F 3 "~" H 9850 1200 50  0001 C CNN
+	1    9850 1200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8600 1450 8600 1200
+Wire Wire Line
+	8600 1200 9650 1200
+Wire Wire Line
+	9650 1100 7050 1100
+Wire Wire Line
+	7050 1100 7050 1450
+$Comp
+L Relay:G5V-1 K1
+U 1 1 5E93EF46
+P 7250 1750
+F 0 "K1" H 6820 1704 50  0000 R CNN
+F 1 "G5V-1" H 6820 1795 50  0000 R CNN
+F 2 "Relay_THT:Relay_SPDT_Omron_G5V-1" H 8380 1720 50  0001 C CNN
+F 3 "http://omronfs.omron.com/en_US/ecb/products/pdf/en-g5v_1.pdf" H 7250 1750 50  0001 C CNN
+	1    7250 1750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Relay:G5V-1 K2
+U 1 1 5E941B93
+P 8800 1750
+F 0 "K2" H 8370 1704 50  0000 R CNN
+F 1 "G5V-1" H 8370 1795 50  0000 R CNN
+F 2 "Relay_THT:Relay_SPDT_Omron_G5V-1" H 9930 1720 50  0001 C CNN
+F 3 "http://omronfs.omron.com/en_US/ecb/products/pdf/en-g5v_1.pdf" H 8800 1750 50  0001 C CNN
+	1    8800 1750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6950 2650 6950 2400
+Wire Wire Line
+	5600 2650 6950 2650
+Connection ~ 6950 2400
+$EndSCHEMATC
